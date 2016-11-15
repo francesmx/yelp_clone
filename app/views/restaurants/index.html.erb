@@ -1,7 +1,7 @@
 <h1>Restaurants</h1>
 <% if @restaurants.any? %>
   <% @restaurants.each do |restaurant| %>
-    <h3><%= link_to restaurant.name, restaurant_path(restaurant) %></h3>
+    <h2><%= link_to restaurant.name, restaurant_path(restaurant) %></h2>
     <p><%= restaurant.description %></p>
     <% if restaurant.reviews.any? %>
       <% restaurant.reviews.each do |review| %>
