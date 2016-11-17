@@ -2,6 +2,10 @@ require"rails_helper"
 
 feature "Reviews" do
 
+  before do
+		sign_up_and_sign_in
+	end
+
   scenario "Leave a review" do
     visit_my_restaurant
     click_link "Review"

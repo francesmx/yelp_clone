@@ -2,6 +2,10 @@ require 'rails_helper'
 
 feature 'restaurants' do
 
+	before do
+		sign_up_and_sign_in
+	end
+
 	context 'no restaurants have been added ' do
 		scenario 'should display a ' do
 			visit '/restaurants'
@@ -11,13 +15,14 @@ feature 'restaurants' do
 	end
 
 	context 'restaurants have been added' do
+
 		before do
-			Restaurant.create(name: 'Tratoria Populare')
+			add_restaurant_and_return
 		end
 
 		scenario 'display restaurant' do
 			visit '/restaurants'
-			expect(page).to have_content 'Tratoria Populare'
+			expect(page).to have_content 'My restaurant'
 			expect(page).not_to have_content 'No restaurants yet'
 		end
 	end
@@ -34,33 +39,26 @@ feature 'restaurants' do
 	end
 
 	context 'displaying an individual restaurant' do
-		let!(:trat){Restaurant.create(name: 'Tratoria Populare')}
-		scenario 'lets the user view a restaurant' do
-			visit '/restaurants'
-			click_link 'Tratoria Populare'
-			expect(page).to have_content 'Tratoria Populare'
-			expect(current_path).to eq "/restaurants/#{trat.id}"
-		end
-	end
 
-	context 'user add description to restaurant' do
-		scenario 'user adds a new restaurant and description' do
+		scenario 'lets the user view a restaurant' do
 			add_restaurant_and_return
+			visit '/restaurants'
 			click_link 'My restaurant'
+			expect(page).to have_content 'My restaurant'
 			expect(page).to have_content 'A great place to eat'
 		end
 	end
 
 	context 'editing a restaurant' do
-		let!(:trat){Restaurant.create(name: 'Tratoria Populare')}
 		scenario 'lets user edit restuarant' do
+			add_restaurant_and_return
 			visit '/restaurants'
-			click_link 'Tratoria Populare'
+			click_link 'My restaurant'
 			click_link 'Edit'
-			fill_in :name, with: 'trat'
+			fill_in :name, with: 'Awesome Restaurant'
 			click_button 'Update Restaurant'
-			expect(page).to have_content 'trat'
-			expect(page).not_to have_content 'Tratoria Populare'
+			expect(page).to have_content 'Awesome Restaurant'
+			expect(page).not_to have_content 'My restaurant'
 		end
 	end
 
