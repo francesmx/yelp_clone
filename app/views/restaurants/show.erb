@@ -1,11 +1,10 @@
 <h1><%= @restaurant.name %></h1>
 <p><%= @restaurant.description %></p>
 <% if @reviews.any? %>
-<h3>Reviews</h3>
-<h4>Average rating: <%= @restaurant.average_rating.to_i %></h4>
+<h4>Average rating: <%= star_rating(@restaurant.average_rating) %></h4>
   <% @reviews.each do |r| %>
   <div class="review">
-    <h4><%= r.rating %> out of 5 - "<%= r.comments %>"</h4>
+    <h4><%= star_rating(r.rating) %> - "<%= r.comments %>"</h4>
     <p><%= r.created_at.strftime("%d %B %Y %H:%M") %></p>
   </div>
   <% end %>
