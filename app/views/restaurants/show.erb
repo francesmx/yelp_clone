@@ -2,13 +2,15 @@
 <p><%= @restaurant.description %></p>
 <% if @reviews.any? %>
 <h3>Reviews</h3>
-<% @reviews.each do |r| %>
+  <% @reviews.each do |r| %>
   <div class="review">
-    <h4>"<%= r.comments %>"</h4>
-    <p>Rated: <%= @restaurant.rating %> out of 5 on <%= r.created_at %></p>
+    <h4><%= r.rating %> out of 5 - "<%= r.comments %>"</h4>
+    <p><%= r.created_at.strftime("%d %B %Y %H:%M") %></p>
   </div>
-<% end %>
+  <% end %>
 <% end %>
 <%= link_to 'Edit', edit_restaurant_url(@restaurant.id) %>
 <%= link_to 'Delete', restaurant_url(@restaurant), method: :delete %>
-<%= link_to 'Review', new_restaurant_review_path(@restaurant.id) %>
+<% if current_user && !current_user.has_reviewed?(@restaurant) %>
+  <%= link_to 'Review', new_restaurant_review_path(@restaurant.id) %>
+<% end %>

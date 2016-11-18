@@ -12,6 +12,7 @@ feature "Reviews" do
     fill_in "comments", with: "Pretty average place. Needs improvement"
     fill_in "rating", with: "2"
     click_button "Review"
+    expect(page).to have_content "2 out of 5"
     expect(page).to have_content "Pretty average place. Needs improvement"
   end
 
