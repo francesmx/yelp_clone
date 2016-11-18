@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'restaurants' do
 
 	before do
-		sign_up_and_sign_in
+		sign_up_and_sign_in('test@example.com', 'testtest')
 	end
 
 	context 'no restaurants have been added ' do
@@ -17,7 +17,7 @@ feature 'restaurants' do
 	context 'restaurants have been added' do
 
 		before do
-			add_restaurant_and_return
+			add_restaurant_and_return("My restaurant", "A great place to eat")
 		end
 
 		scenario 'display restaurant' do
@@ -41,7 +41,7 @@ feature 'restaurants' do
 	context 'displaying an individual restaurant' do
 
 		scenario 'lets the user view a restaurant' do
-			add_restaurant_and_return
+			add_restaurant_and_return("My restaurant", "A great place to eat")
 			visit '/restaurants'
 			click_link 'My restaurant'
 			expect(page).to have_content 'My restaurant'
@@ -51,7 +51,7 @@ feature 'restaurants' do
 
 	context 'editing a restaurant' do
 		scenario 'lets user edit restuarant' do
-			add_restaurant_and_return
+			add_restaurant_and_return("My restaurant", "A great place to eat")
 			visit '/restaurants'
 			click_link 'My restaurant'
 			click_link 'Edit'
@@ -64,7 +64,7 @@ feature 'restaurants' do
 
 	context 'deleting a restaurant' do
 		scenario 'user deletes a restaurant' do
-			visit_my_restaurant
+			visit_restaurant("My restaurant")
 			click_link 'Delete'
 			expect(page).to have_content 'My restaurant has been deleted'
 		end
@@ -72,8 +72,8 @@ feature 'restaurants' do
 
 	context 'not allowing the same name' do
     scenario 'user adds a restaurant with an existing name' do
-      add_restaurant_and_return
-      add_restaurant_and_return
+      add_restaurant_and_return("My restaurant", "A great place to eat")
+      add_restaurant_and_return("My restaurant", "A great place to eat")
       expect(page).to have_content 'Name has already been taken'
     end
 	end

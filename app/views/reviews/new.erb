@@ -2,6 +2,6 @@
   <%= f.label :comments, 'Your comments: ' %>
   <%= f.text_area :comments %>
   <%= f.label :rating, 'Your rating: ' %>
-  <%= f.number_field :rating, in: 0..5 %>
+  <%= f.select :rating, (0..5) %>
   <%= f.submit 'Review' %>
 <% end %>

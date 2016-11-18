@@ -8461,3 +8461,1403 @@ Processing by RestaurantsController#show as HTML
 Completed 200 OK in 78ms (Views: 71.3ms | ActiveRecord: 2.2ms)
 
 
+Started GET "/restaurants/1" for ::1 at 2016-11-18 11:27:22 +0000
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRestaurant Load (62.1ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering restaurants/show.erb within layouts/application
+  [1m[36mReview Exists (30.5ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT $2[0m  [["restaurant_id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  [1m[36mUser Load (39.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRestaurant Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "restaurants" INNER JOIN "reviews" ON "restaurants"."id" = "reviews"."restaurant_id" WHERE "reviews"."user_id" = $1 AND "restaurants"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 1], ["LIMIT", 1]]
+  Rendered restaurants/show.erb within layouts/application (195.7ms)
+  Rendered application/_header.erb (18.7ms)
+Completed 200 OK in 628ms (Views: 425.9ms | ActiveRecord: 133.7ms)
+
+
+Started GET "/restaurants/3" for ::1 at 2016-11-18 11:27:26 +0000
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRestaurant Load (17.8ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering restaurants/show.erb within layouts/application
+  [1m[36mReview Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT $2[0m  [["restaurant_id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRestaurant Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "restaurants" INNER JOIN "reviews" ON "restaurants"."id" = "reviews"."restaurant_id" WHERE "reviews"."user_id" = $1 AND "restaurants"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 3], ["LIMIT", 1]]
+  Rendered restaurants/show.erb within layouts/application (21.9ms)
+  Rendered application/_header.erb (1.7ms)
+Completed 200 OK in 134ms (Views: 106.3ms | ActiveRecord: 21.1ms)
+
+
+Started GET "/restaurants/3/reviews/new" for ::1 at 2016-11-18 11:27:27 +0000
+Processing by ReviewsController#new as HTML
+  Parameters: {"restaurant_id"=>"3"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.7ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering reviews/new.erb within layouts/application
+  Rendered reviews/new.erb within layouts/application (15.8ms)
+  Rendered application/_header.erb (2.4ms)
+Completed 200 OK in 136ms (Views: 104.7ms | ActiveRecord: 10.9ms)
+
+
+Started GET "/" for ::1 at 2016-11-18 14:15:01 +0000
+Processing by RestaurantsController#index as HTML
+  Rendering restaurants/index.erb within layouts/application
+  [1m[35m (6.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[36mRestaurant Load (0.9ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  Rendered restaurants/index.erb within layouts/application (179.4ms)
+  [1m[36mUser Load (17.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered application/_header.erb (68.8ms)
+Completed 200 OK in 791ms (Views: 727.4ms | ActiveRecord: 25.1ms)
+
+
+Started GET "/restaurants/6" for ::1 at 2016-11-18 14:15:13 +0000
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mRestaurant Load (8.5ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering restaurants/show.erb within layouts/application
+  [1m[36mReview Exists (2.5ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT $2[0m  [["restaurant_id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (16.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRestaurant Exists (6.1ms)[0m  [1m[34mSELECT  1 AS one FROM "restaurants" INNER JOIN "reviews" ON "restaurants"."id" = "reviews"."restaurant_id" WHERE "reviews"."user_id" = $1 AND "restaurants"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 6], ["LIMIT", 1]]
+  Rendered restaurants/show.erb within layouts/application (99.8ms)
+  Rendered application/_header.erb (6.0ms)
+Completed 200 OK in 341ms (Views: 251.3ms | ActiveRecord: 33.4ms)
+
+
+Started GET "/restaurants/6/reviews/new" for ::1 at 2016-11-18 14:15:16 +0000
+Processing by ReviewsController#new as HTML
+  Parameters: {"restaurant_id"=>"6"}
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (14.9ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering reviews/new.erb within layouts/application
+  Rendered reviews/new.erb within layouts/application (16.5ms)
+  Rendered application/_header.erb (4.1ms)
+Completed 200 OK in 200ms (Views: 169.3ms | ActiveRecord: 17.5ms)
+
+
+Started POST "/restaurants/6/reviews" for ::1 at 2016-11-18 14:15:26 +0000
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TqCy3iwGwRcvpmSgJNgnJRMO6bHc9/lddeF/tH6ooPRHlW9CfB+fKvghtrj5hPk2QmmZhG//UlQgdq9klsIvwg==", "review"=>{"comments"=>"Delicious food. Bit expensive though.", "rating"=>"5"}, "commit"=>"Review", "restaurant_id"=>"6"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (1.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mReview Exists (6.0ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = $1 AND "reviews"."restaurant_id" = $2 LIMIT $3[0m  [["user_id", 2], ["restaurant_id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (13.3ms)[0m  [1m[32mINSERT INTO "reviews" ("comments", "rating", "restaurant_id", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["comments", "Delicious food. Bit expensive though."], ["rating", 5], ["restaurant_id", 6], ["created_at", 2016-11-18 14:15:26 UTC], ["updated_at", 2016-11-18 14:15:26 UTC], ["user_id", 2]]
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/restaurants/6
+Completed 302 Found in 293ms (ActiveRecord: 28.0ms)
+
+
+Started GET "/restaurants/6" for ::1 at 2016-11-18 14:15:26 +0000
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mRestaurant Load (1.1ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering restaurants/show.erb within layouts/application
+  [1m[36mReview Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT $2[0m  [["restaurant_id", 6], ["LIMIT", 1]]
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 6]]
+  [1m[36mUser Load (6.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRestaurant Exists (3.2ms)[0m  [1m[34mSELECT  1 AS one FROM "restaurants" INNER JOIN "reviews" ON "restaurants"."id" = "reviews"."restaurant_id" WHERE "reviews"."user_id" = $1 AND "restaurants"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 6], ["LIMIT", 1]]
+  Rendered restaurants/show.erb within layouts/application (29.1ms)
+  Rendered application/_header.erb (3.1ms)
+Completed 200 OK in 135ms (Views: 116.4ms | ActiveRecord: 11.8ms)
+
+
+Started GET "/" for ::1 at 2016-11-18 14:15:36 +0000
+Processing by RestaurantsController#index as HTML
+  Rendering restaurants/index.erb within layouts/application
+  [1m[35m (9.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[36mRestaurant Load (1.8ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  Rendered restaurants/index.erb within layouts/application (17.1ms)
+  [1m[36mUser Load (12.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered application/_header.erb (18.4ms)
+Completed 200 OK in 103ms (Views: 73.2ms | ActiveRecord: 23.6ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2016-11-18 14:18:24 +0000
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"s/09l+6Du11+VJQVh39JVML8GNjbPaW90zbo3RsKDHDnK8peyOBo/jfHz/IuNgGtCLEB7GJspcBIvHj50VyPLw=="}
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 66ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/" for ::1 at 2016-11-18 14:18:24 +0000
+Processing by RestaurantsController#index as HTML
+  Rendering restaurants/index.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[36mRestaurant Load (0.6ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  Rendered restaurants/index.erb within layouts/application (22.9ms)
+  Rendered application/_header.erb (7.2ms)
+Completed 200 OK in 251ms (Views: 240.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/restaurants/3" for ::1 at 2016-11-18 14:18:27 +0000
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRestaurant Load (0.7ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering restaurants/show.erb within layouts/application
+  [1m[36mReview Exists (3.4ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT $2[0m  [["restaurant_id", 3], ["LIMIT", 1]]
+  Rendered restaurants/show.erb within layouts/application (27.5ms)
+  Rendered application/_header.erb (4.9ms)
+Completed 200 OK in 202ms (Views: 182.7ms | ActiveRecord: 4.1ms)
+
+
+Started DELETE "/restaurants/3" for ::1 at 2016-11-18 14:18:29 +0000
+Processing by RestaurantsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"/EZ05mUUVFiRQ++Ym39FxqdMZkNU2b258qIxGSmAkKq8rzRkX+diCf3hG6ND6Oxwx4Qm10cTTTWDlN0O1NrWUA==", "id"=>"3"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-11-18 14:18:29 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (5.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (19.8ms)
+  Rendered application/_header.erb (2.5ms)
+Completed 200 OK in 95ms (Views: 90.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/restaurants/3" for ::1 at 2016-11-18 14:18:31 +0000
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering restaurants/show.erb within layouts/application
+  [1m[36mReview Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT $2[0m  [["restaurant_id", 3], ["LIMIT", 1]]
+  Rendered restaurants/show.erb within layouts/application (5.7ms)
+  Rendered application/_header.erb (2.3ms)
+Completed 200 OK in 185ms (Views: 165.9ms | ActiveRecord: 11.3ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-11-18 14:20:13 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (5.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (20.9ms)
+  Rendered application/_header.erb (6.2ms)
+Completed 200 OK in 278ms (Views: 176.6ms | ActiveRecord: 29.6ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-11-18 14:20:15 +0000
+Started GET "/users/auth/facebook" for ::1 at 2016-11-18 14:20:16 +0000
+Started GET "/users/auth/facebook/callback?code=AQCUIP2mpz-T_BUbW5U4DcHHzKGsSwnR_KbYPYiZEqDHk817N3g6ov226-YU0LrcaHVv6FNq0FW_pJAHb7pKBDoCnwQtWeSuankpJI4FWAafJcEq7IT1fsNEYVxLTEzDWSqjDNux7-mA79N9ROQflc_GeNwlm-0gFbXp4bVhloKnMJqaqfZw3vXZMZWZ1WO6_7k_qfnkKK4ljfHJDCigTOcE5aTC2HqTrV1AnKW5dZ366k6Qm8NW7s1_-eX_6rLV10pmeVWFWIZwHV2Ux-UoR3_6qeo3INP6e7PmhQ_ewNxhZNDZ6yJjCRSafI5eJa3Pbs4&state=206c1c4fe809729429169310e3c8a70b4c2bd11f0dca78ac" for ::1 at 2016-11-18 14:20:16 +0000
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQCUIP2mpz-T_BUbW5U4DcHHzKGsSwnR_KbYPYiZEqDHk817N3g6ov226-YU0LrcaHVv6FNq0FW_pJAHb7pKBDoCnwQtWeSuankpJI4FWAafJcEq7IT1fsNEYVxLTEzDWSqjDNux7-mA79N9ROQflc_GeNwlm-0gFbXp4bVhloKnMJqaqfZw3vXZMZWZ1WO6_7k_qfnkKK4ljfHJDCigTOcE5aTC2HqTrV1AnKW5dZ366k6Qm8NW7s1_-eX_6rLV10pmeVWFWIZwHV2Ux-UoR3_6qeo3INP6e7PmhQ_ewNxhZNDZ6yJjCRSafI5eJa3Pbs4", "state"=>"206c1c4fe809729429169310e3c8a70b4c2bd11f0dca78ac"}
+  [1m[36mUser Load (14.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["provider", "facebook"], ["uid", "10157980914865727"], ["LIMIT", 1]]
+  [1m[35m (1.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.9ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["current_sign_in_at", 2016-11-18 14:20:17 UTC], ["last_sign_in_at", 2016-11-18 10:57:58 UTC], ["sign_in_count", 6], ["updated_at", 2016-11-18 14:20:17 UTC], ["id", 2]]
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 48ms (ActiveRecord: 21.8ms)
+
+
+Started GET "/" for ::1 at 2016-11-18 14:20:17 +0000
+Processing by RestaurantsController#index as HTML
+  Rendering restaurants/index.erb within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  Rendered restaurants/index.erb within layouts/application (29.0ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered application/_header.erb (5.1ms)
+Completed 200 OK in 113ms (Views: 83.9ms | ActiveRecord: 12.7ms)
+
+
+Started GET "/restaurants/5" for ::1 at 2016-11-18 14:20:24 +0000
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mRestaurant Load (0.8ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering restaurants/show.erb within layouts/application
+  [1m[36mReview Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT $2[0m  [["restaurant_id", 5], ["LIMIT", 1]]
+  [1m[36mReview Load (6.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 5]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRestaurant Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "restaurants" INNER JOIN "reviews" ON "restaurants"."id" = "reviews"."restaurant_id" WHERE "reviews"."user_id" = $1 AND "restaurants"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 5], ["LIMIT", 1]]
+  Rendered restaurants/show.erb within layouts/application (50.1ms)
+  Rendered application/_header.erb (1.9ms)
+Completed 200 OK in 302ms (Views: 238.5ms | ActiveRecord: 40.4ms)
+
+
+Started GET "/" for ::1 at 2016-11-18 14:20:29 +0000
+Processing by RestaurantsController#index as HTML
+  Rendering restaurants/index.erb within layouts/application
+  [1m[35m (25.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[36mRestaurant Load (0.5ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  Rendered restaurants/index.erb within layouts/application (43.2ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered application/_header.erb (7.1ms)
+Completed 200 OK in 190ms (Views: 157.3ms | ActiveRecord: 27.4ms)
+
+
+Started GET "/restaurants/1" for ::1 at 2016-11-18 14:20:29 +0000
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRestaurant Load (11.9ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering restaurants/show.erb within layouts/application
+  [1m[36mReview Exists (4.2ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT $2[0m  [["restaurant_id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (3.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRestaurant Exists (2.5ms)[0m  [1m[34mSELECT  1 AS one FROM "restaurants" INNER JOIN "reviews" ON "restaurants"."id" = "reviews"."restaurant_id" WHERE "reviews"."user_id" = $1 AND "restaurants"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 1], ["LIMIT", 1]]
+  Rendered restaurants/show.erb within layouts/application (25.9ms)
+  Rendered application/_header.erb (1.3ms)
+Completed 200 OK in 119ms (Views: 90.4ms | ActiveRecord: 22.8ms)
+
+
+Started GET "/" for ::1 at 2016-11-18 14:20:31 +0000
+Processing by RestaurantsController#index as HTML
+  Rendering restaurants/index.erb within layouts/application
+  [1m[35m (10.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[36mRestaurant Load (10.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  Rendered restaurants/index.erb within layouts/application (34.3ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered application/_header.erb (7.5ms)
+Completed 200 OK in 140ms (Views: 114.7ms | ActiveRecord: 21.4ms)
+
+
+Started GET "/restaurants/2" for ::1 at 2016-11-18 14:20:32 +0000
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRestaurant Load (0.4ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering restaurants/show.erb within layouts/application
+  [1m[36mReview Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT $2[0m  [["restaurant_id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRestaurant Exists (3.3ms)[0m  [1m[34mSELECT  1 AS one FROM "restaurants" INNER JOIN "reviews" ON "restaurants"."id" = "reviews"."restaurant_id" WHERE "reviews"."user_id" = $1 AND "restaurants"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 2], ["LIMIT", 1]]
+  Rendered restaurants/show.erb within layouts/application (13.7ms)
+  Rendered application/_header.erb (1.4ms)
+Completed 200 OK in 134ms (Views: 125.4ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/restaurants/2/reviews/new" for ::1 at 2016-11-18 14:20:33 +0000
+Processing by ReviewsController#new as HTML
+  Parameters: {"restaurant_id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering reviews/new.erb within layouts/application
+  Rendered reviews/new.erb within layouts/application (11.8ms)
+  Rendered application/_header.erb (2.7ms)
+Completed 200 OK in 88ms (Views: 81.4ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/restaurants/2/reviews" for ::1 at 2016-11-18 14:20:40 +0000
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"70svDNKoxZwpMLOleimX422MSmLHE1l0he/j9x+wWGq8hCyMk4ryg7rgg7gJhKGWHhQDfD9gSUW5sSvV/nkZuQ==", "review"=>{"comments"=>"Can I still save a review?", "rating"=>"2"}, "commit"=>"Review", "restaurant_id"=>"2"}
+  [1m[36mUser Load (7.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.5ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 2]]
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 7.7ms)
+
+
+  
+NoMethodError (undefined method `build_review' for #<ActiveRecord::Associations::CollectionProxy []>
+Did you mean?  build_arel):
+  
+app/controllers/reviews_controller.rb:12:in `create'
+  Rendering /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (18.4ms)
+  Rendering /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendering /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.0ms)
+  Rendered /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (117.6ms)
+Started POST "/restaurants/2/reviews" for ::1 at 2016-11-18 14:21:01 +0000
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5dp4qEXYUZ/XlE7vRr+lLTxoA0NIKtbNzwSuk3Mw0GZexa2x4ah9FtwYQIW1mUGkwxcaUQFSUepXqVIzqddu7A==", "review"=>{"comments"=>"Can I still save a review?", "rating"=>"2"}, "commit"=>"Review", "restaurant_id"=>"2"}
+  [1m[36mUser Load (13.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 175ms (ActiveRecord: 49.1ms)
+
+
+  
+NoMethodError (undefined method `build_review' for #<Restaurant:0x007ff2d3423f88>
+Did you mean?  build_user):
+  
+app/controllers/reviews_controller.rb:12:in `create'
+  Rendering /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (11.4ms)
+  Rendering /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (12.7ms)
+  Rendering /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (117.6ms)
+Started POST "/restaurants/2/reviews" for ::1 at 2016-11-18 14:22:07 +0000
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5dp4qEXYUZ/XlE7vRr+lLTxoA0NIKtbNzwSuk3Mw0GZexa2x4ah9FtwYQIW1mUGkwxcaUQFSUepXqVIzqddu7A==", "review"=>{"comments"=>"Can I still save a review?", "rating"=>"2"}, "commit"=>"Review", "restaurant_id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 45ms (ActiveRecord: 0.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Restaurant with 'id'=):
+  
+app/controllers/reviews_controller.rb:11:in `create'
+  Rendering /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (14.3ms)
+  Rendering /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (9.5ms)
+  Rendering /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.5ms)
+  Rendered /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (125.3ms)
+Started POST "/restaurants/2/reviews" for ::1 at 2016-11-18 14:22:22 +0000
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5dp4qEXYUZ/XlE7vRr+lLTxoA0NIKtbNzwSuk3Mw0GZexa2x4ah9FtwYQIW1mUGkwxcaUQFSUepXqVIzqddu7A==", "review"=>{"comments"=>"Can I still save a review?", "rating"=>"2"}, "commit"=>"Review", "restaurant_id"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 64ms (ActiveRecord: 1.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Restaurant with 'id'=):
+  
+app/controllers/reviews_controller.rb:11:in `create'
+  Rendering /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.0ms)
+  Rendering /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendering /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (94.4ms)
+Started POST "/restaurants/2/reviews" for ::1 at 2016-11-18 14:22:26 +0000
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5dp4qEXYUZ/XlE7vRr+lLTxoA0NIKtbNzwSuk3Mw0GZexa2x4ah9FtwYQIW1mUGkwxcaUQFSUepXqVIzqddu7A==", "review"=>{"comments"=>"Can I still save a review?", "rating"=>"2"}, "commit"=>"Review", "restaurant_id"=>"2"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.5ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 7ms (ActiveRecord: 1.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Restaurant with 'id'=):
+  
+app/controllers/reviews_controller.rb:11:in `create'
+  Rendering /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.1ms)
+  Rendering /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (10.5ms)
+  Rendering /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (100.1ms)
+Started POST "/restaurants/2/reviews" for ::1 at 2016-11-18 14:22:58 +0000
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5dp4qEXYUZ/XlE7vRr+lLTxoA0NIKtbNzwSuk3Mw0GZexa2x4ah9FtwYQIW1mUGkwxcaUQFSUepXqVIzqddu7A==", "review"=>{"comments"=>"Can I still save a review?", "rating"=>"2"}, "commit"=>"Review", "restaurant_id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 66ms (ActiveRecord: 0.6ms)
+
+
+  
+NoMethodError (undefined method `build_review' for #<Restaurant:0x007ff2da308b10>
+Did you mean?  build_user):
+  
+app/controllers/reviews_controller.rb:12:in `create'
+  Rendering /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.7ms)
+  Rendering /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.4ms)
+  Rendering /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (95.7ms)
+Started GET "/restaurants/2" for ::1 at 2016-11-18 14:30:20 +0000
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRestaurant Load (1.6ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering restaurants/show.erb within layouts/application
+  [1m[36mReview Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT $2[0m  [["restaurant_id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRestaurant Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "restaurants" INNER JOIN "reviews" ON "restaurants"."id" = "reviews"."restaurant_id" WHERE "reviews"."user_id" = $1 AND "restaurants"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 2], ["LIMIT", 1]]
+  Rendered restaurants/show.erb within layouts/application (75.4ms)
+  Rendered application/_header.erb (6.7ms)
+Completed 200 OK in 339ms (Views: 253.8ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/restaurants/2/reviews/new" for ::1 at 2016-11-18 14:30:22 +0000
+Processing by ReviewsController#new as HTML
+  Parameters: {"restaurant_id"=>"2"}
+  [1m[36mUser Load (13.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (1.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering reviews/new.erb within layouts/application
+  Rendered reviews/new.erb within layouts/application (8.1ms)
+  Rendered application/_header.erb (4.9ms)
+Completed 200 OK in 188ms (Views: 100.9ms | ActiveRecord: 40.3ms)
+
+
+Started POST "/restaurants/2/reviews" for ::1 at 2016-11-18 14:30:26 +0000
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f19pKjOUJEdAQL8J23IRwe2fyLKD0I+pn4ipIx3EXeoskGqqcrYTWNOQjxSo3ye0ngeBrHujn5ij1mEB/A0cOQ==", "review"=>{"comments"=>"Test review", "rating"=>"1"}, "commit"=>"Review", "restaurant_id"=>"2"}
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.6ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 107ms (ActiveRecord: 3.7ms)
+
+
+  
+NoMethodError (undefined method `build_review' for #<Restaurant:0x007ff2da3bc110>
+Did you mean?  build_user):
+  
+app/controllers/reviews_controller.rb:12:in `create'
+  Rendering /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (18.7ms)
+  Rendering /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.9ms)
+  Rendering /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (137.4ms)
+Started POST "/restaurants/2/reviews" for ::1 at 2016-11-18 14:32:39 +0000
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FyE7HnLvqNo4tZ3hGQTVl2L5UJeRwF/622KliO7PJNusPu4H1p+EUzM5k4vqIjEenYZJhdi42N1Dz1koNCiaUQ==", "review"=>{"comments"=>"Test review", "rating"=>"1"}, "commit"=>"Review", "restaurant_id"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.4ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mReview Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = $1 AND "reviews"."restaurant_id" = $2 LIMIT $3[0m  [["user_id", 2], ["restaurant_id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (25.8ms)[0m  [1m[32mINSERT INTO "reviews" ("comments", "rating", "restaurant_id", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["comments", "Test review"], ["rating", 1], ["restaurant_id", 2], ["created_at", 2016-11-18 14:32:40 UTC], ["updated_at", 2016-11-18 14:32:40 UTC], ["user_id", 2]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/restaurants/2
+Completed 302 Found in 175ms (ActiveRecord: 30.2ms)
+
+
+Started GET "/restaurants/2" for ::1 at 2016-11-18 14:32:40 +0000
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRestaurant Load (0.6ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering restaurants/show.erb within layouts/application
+  [1m[36mReview Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT $2[0m  [["restaurant_id", 2], ["LIMIT", 1]]
+  [1m[36mReview Load (6.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 2]]
+  [1m[36mUser Load (8.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRestaurant Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "restaurants" INNER JOIN "reviews" ON "restaurants"."id" = "reviews"."restaurant_id" WHERE "reviews"."user_id" = $1 AND "restaurants"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 2], ["LIMIT", 1]]
+  Rendered restaurants/show.erb within layouts/application (40.7ms)
+  Rendered application/_header.erb (5.8ms)
+Completed 200 OK in 214ms (Views: 190.2ms | ActiveRecord: 17.0ms)
+
+
+Started GET "/" for ::1 at 2016-11-18 14:32:44 +0000
+Processing by RestaurantsController#index as HTML
+  Rendering restaurants/index.erb within layouts/application
+  [1m[35m (11.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[36mRestaurant Load (2.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  Rendered restaurants/index.erb within layouts/application (23.3ms)
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered application/_header.erb (5.6ms)
+Completed 200 OK in 93ms (Views: 66.4ms | ActiveRecord: 15.2ms)
+
+
+Started GET "/restaurants/new" for ::1 at 2016-11-18 14:42:27 +0000
+Processing by RestaurantsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering restaurants/new.erb within layouts/application
+  Rendered restaurants/new.erb within layouts/application (8.8ms)
+  Rendered application/_header.erb (2.7ms)
+Completed 200 OK in 354ms (Views: 225.0ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/restaurants" for ::1 at 2016-11-18 14:42:39 +0000
+Processing by RestaurantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LQpDQl02UBkXHhSJAd2qKtPT1Ucwrk2VC3yAk6O5vyUX0zK30spdeir0I1NMnWJX17yFDZs3FiS1qHpdOKYFsw==", "restaurant"=>{"name"=>"Burger King", "description"=>"Burger heaven"}, "commit"=>"Add Restaurant"}
+  [1m[36mUser Load (13.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRestaurant Exists (2.2ms)[0m  [1m[34mSELECT  1 AS one FROM "restaurants" WHERE "restaurants"."name" = $1 LIMIT $2[0m  [["name", "Burger King"], ["LIMIT", 1]]
+  [1m[35mSQL (9.6ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "description", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Burger King"], ["description", "Burger heaven"], ["created_at", 2016-11-18 14:42:40 UTC], ["updated_at", 2016-11-18 14:42:40 UTC], ["user_id", 2]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/restaurants
+Completed 302 Found in 58ms (ActiveRecord: 26.3ms)
+
+
+Started GET "/restaurants" for ::1 at 2016-11-18 14:42:40 +0000
+Processing by RestaurantsController#index as HTML
+  Rendering restaurants/index.erb within layouts/application
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[36mRestaurant Load (0.5ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  Rendered restaurants/index.erb within layouts/application (6.5ms)
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered application/_header.erb (6.1ms)
+Completed 200 OK in 121ms (Views: 114.2ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/restaurants/7" for ::1 at 2016-11-18 14:42:43 +0000
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mRestaurant Load (10.3ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering restaurants/show.erb within layouts/application
+  [1m[36mReview Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT $2[0m  [["restaurant_id", 7], ["LIMIT", 1]]
+  [1m[36mUser Load (6.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRestaurant Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "restaurants" INNER JOIN "reviews" ON "restaurants"."id" = "reviews"."restaurant_id" WHERE "reviews"."user_id" = $1 AND "restaurants"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 7], ["LIMIT", 1]]
+  Rendered restaurants/show.erb within layouts/application (26.3ms)
+  Rendered application/_header.erb (2.3ms)
+Completed 200 OK in 130ms (Views: 77.5ms | ActiveRecord: 34.5ms)
+
+
+Started GET "/restaurants/7/reviews/new" for ::1 at 2016-11-18 14:42:44 +0000
+Processing by ReviewsController#new as HTML
+  Parameters: {"restaurant_id"=>"7"}
+  [1m[36mUser Load (4.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (5.7ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering reviews/new.erb within layouts/application
+  Rendered reviews/new.erb within layouts/application (5.6ms)
+  Rendered application/_header.erb (1.5ms)
+Completed 200 OK in 115ms (Views: 56.5ms | ActiveRecord: 27.9ms)
+
+
+Started POST "/restaurants/7/reviews" for ::1 at 2016-11-18 14:42:50 +0000
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"u80F7fxeyHo2jxjpEF/2mG1f+ZWtFxxxLdXXQ7sC46GBe3N0EEF4rh3X9k9W1KZfSFKRRn5qi9jl4VQRJc3xCQ==", "review"=>{"comments"=>"I like whoppers.", "rating"=>"4"}, "commit"=>"Review", "restaurant_id"=>"7"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.5ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mReview Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = $1 AND "reviews"."restaurant_id" = $2 LIMIT $3[0m  [["user_id", 2], ["restaurant_id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "reviews" ("comments", "rating", "restaurant_id", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["comments", "I like whoppers."], ["rating", 4], ["restaurant_id", 7], ["created_at", 2016-11-18 14:42:50 UTC], ["updated_at", 2016-11-18 14:42:50 UTC], ["user_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/restaurants/7
+Completed 302 Found in 30ms (ActiveRecord: 6.1ms)
+
+
+Started GET "/restaurants/7" for ::1 at 2016-11-18 14:42:50 +0000
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mRestaurant Load (0.4ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering restaurants/show.erb within layouts/application
+  [1m[36mReview Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT $2[0m  [["restaurant_id", 7], ["LIMIT", 1]]
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 7]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRestaurant Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "restaurants" INNER JOIN "reviews" ON "restaurants"."id" = "reviews"."restaurant_id" WHERE "reviews"."user_id" = $1 AND "restaurants"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 7], ["LIMIT", 1]]
+  Rendered restaurants/show.erb within layouts/application (14.2ms)
+  Rendered application/_header.erb (2.2ms)
+Completed 200 OK in 73ms (Views: 62.3ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/" for ::1 at 2016-11-18 14:43:40 +0000
+Processing by RestaurantsController#index as HTML
+  Rendering restaurants/index.erb within layouts/application
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[36mRestaurant Load (0.5ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  Rendered restaurants/index.erb within layouts/application (31.9ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered application/_header.erb (40.5ms)
+Completed 200 OK in 263ms (Views: 247.3ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/restaurants/new" for ::1 at 2016-11-18 14:43:41 +0000
+Processing by RestaurantsController#new as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering restaurants/new.erb within layouts/application
+  Rendered restaurants/new.erb within layouts/application (9.0ms)
+  Rendered application/_header.erb (2.8ms)
+Completed 200 OK in 202ms (Views: 178.2ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/restaurants" for ::1 at 2016-11-18 14:43:48 +0000
+Processing by RestaurantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+cVKr4NXUoMBMHgho1eWLjCpyMQVO0xT5UU0SNqlzjvDHDtaDKtf4DzaT/vuF15TNMaYjr6iF+Jbkc6GQbp0rQ==", "restaurant"=>{"name"=>"Test Rest", "description"=>"Yum"}, "commit"=>"Add Restaurant"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 1.0ms)
+
+
+  
+NoMethodError (undefined method `build_with_user' for nil:NilClass):
+  
+app/controllers/restaurants_controller.rb:16:in `create'
+  Rendering /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.1ms)
+  Rendering /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.3ms)
+  Rendering /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (113.9ms)
+Started POST "/restaurants" for ::1 at 2016-11-18 14:44:10 +0000
+Processing by RestaurantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"I2jDUL16AZmHB6czO2n/zfZIeIrMiaaxSlmfFsFAaMiYdxZJGQotEIyLqVnITxtECTdhmIXxIZbS9GO2G6fWQg==", "restaurant"=>{"name"=>"Test Rest", "description"=>"Yum"}, "commit"=>"Add Restaurant"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 67ms (ActiveRecord: 0.3ms)
+
+
+  
+NoMethodError (undefined method `build_with_user' for #<Class:0x007ff2db080d60>):
+  
+app/controllers/restaurants_controller.rb:16:in `create'
+  Rendering /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.6ms)
+  Rendering /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendering /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (93.2ms)
+Started POST "/restaurants" for ::1 at 2016-11-18 14:44:22 +0000
+Processing by RestaurantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"I2jDUL16AZmHB6czO2n/zfZIeIrMiaaxSlmfFsFAaMiYdxZJGQotEIyLqVnITxtECTdhmIXxIZbS9GO2G6fWQg==", "restaurant"=>{"name"=>"Test Rest", "description"=>"Yum"}, "commit"=>"Add Restaurant"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 410ms (ActiveRecord: 0.7ms)
+
+
+  
+NameError (undefined local variable or method `restaurants' for #<RestaurantsController:0x007ff2da1026e0>
+Did you mean?  restaurants_url):
+  
+app/controllers/restaurants_controller.rb:16:in `create'
+  Rendering /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.1ms)
+  Rendering /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.4ms)
+  Rendering /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (165.1ms)
+Started POST "/restaurants" for ::1 at 2016-11-18 14:44:41 +0000
+Processing by RestaurantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"I2jDUL16AZmHB6czO2n/zfZIeIrMiaaxSlmfFsFAaMiYdxZJGQotEIyLqVnITxtECTdhmIXxIZbS9GO2G6fWQg==", "restaurant"=>{"name"=>"Test Rest", "description"=>"Yum"}, "commit"=>"Add Restaurant"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 103ms (ActiveRecord: 0.3ms)
+
+
+  
+NoMethodError (undefined method `build_with_user' for nil:NilClass):
+  
+app/controllers/restaurants_controller.rb:16:in `create'
+  Rendering /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (12.6ms)
+  Rendering /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.7ms)
+  Rendering /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.0ms)
+  Rendered /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (134.6ms)
+Started POST "/restaurants" for ::1 at 2016-11-18 14:46:01 +0000
+Processing by RestaurantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"I2jDUL16AZmHB6czO2n/zfZIeIrMiaaxSlmfFsFAaMiYdxZJGQotEIyLqVnITxtECTdhmIXxIZbS9GO2G6fWQg==", "restaurant"=>{"name"=>"Test Rest", "description"=>"Yum"}, "commit"=>"Add Restaurant"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 147ms (ActiveRecord: 0.6ms)
+
+
+  
+NoMethodError (undefined method `build_with_user' for nil:NilClass):
+  
+app/controllers/restaurants_controller.rb:16:in `create'
+  Rendering /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.8ms)
+  Rendering /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.1ms)
+  Rendering /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.3ms)
+  Rendered /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (100.4ms)
+Started POST "/restaurants" for ::1 at 2016-11-18 14:46:26 +0000
+Processing by RestaurantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"I2jDUL16AZmHB6czO2n/zfZIeIrMiaaxSlmfFsFAaMiYdxZJGQotEIyLqVnITxtECTdhmIXxIZbS9GO2G6fWQg==", "restaurant"=>{"name"=>"Test Rest", "description"=>"Yum"}, "commit"=>"Add Restaurant"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 72ms (ActiveRecord: 0.3ms)
+
+
+  
+NoMethodError (undefined method `build_with_user' for #<Class:0x007ff2d8d31be8>):
+  
+app/controllers/restaurants_controller.rb:16:in `create'
+  Rendering /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (10.3ms)
+  Rendering /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendering /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (6.0ms)
+  Rendered /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (109.4ms)
+Started POST "/restaurants" for ::1 at 2016-11-18 14:47:20 +0000
+Processing by RestaurantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"I2jDUL16AZmHB6czO2n/zfZIeIrMiaaxSlmfFsFAaMiYdxZJGQotEIyLqVnITxtECTdhmIXxIZbS9GO2G6fWQg==", "restaurant"=>{"name"=>"Test Rest", "description"=>"Yum"}, "commit"=>"Add Restaurant"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 1.9ms)
+
+
+  
+NoMethodError (undefined method `restaurants' for nil:NilClass):
+  
+app/controllers/restaurants_controller.rb:16:in `create'
+  Rendering /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.4ms)
+  Rendering /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendering /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (98.5ms)
+Started POST "/restaurants" for ::1 at 2016-11-18 14:47:52 +0000
+Processing by RestaurantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"I2jDUL16AZmHB6czO2n/zfZIeIrMiaaxSlmfFsFAaMiYdxZJGQotEIyLqVnITxtECTdhmIXxIZbS9GO2G6fWQg==", "restaurant"=>{"name"=>"Test Rest", "description"=>"Yum"}, "commit"=>"Add Restaurant"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRestaurant Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "restaurants" WHERE "restaurants"."name" = $1 LIMIT $2[0m  [["name", "Test Rest"], ["LIMIT", 1]]
+  [1m[35mSQL (2.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "description", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Test Rest"], ["description", "Yum"], ["created_at", 2016-11-18 14:47:52 UTC], ["updated_at", 2016-11-18 14:47:52 UTC], ["user_id", 2]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/restaurants
+Completed 302 Found in 68ms (ActiveRecord: 5.7ms)
+
+
+Started GET "/restaurants" for ::1 at 2016-11-18 14:47:52 +0000
+Processing by RestaurantsController#index as HTML
+  Rendering restaurants/index.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[36mRestaurant Load (0.4ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  Rendered restaurants/index.erb within layouts/application (6.3ms)
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered application/_header.erb (5.9ms)
+Completed 200 OK in 74ms (Views: 67.5ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/restaurants/new" for ::1 at 2016-11-18 14:47:57 +0000
+Processing by RestaurantsController#new as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering restaurants/new.erb within layouts/application
+  Rendered restaurants/new.erb within layouts/application (10.4ms)
+  Rendered application/_header.erb (7.8ms)
+Completed 200 OK in 146ms (Views: 130.7ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/restaurants" for ::1 at 2016-11-18 14:48:08 +0000
+Processing by RestaurantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JTU8HHhi97aTGbmBy114PZcCVnGpZYA/MCco1xjUb3wf7E3p95761a7zjluGHbBAk20GOwL8246O89IZg8vV6g==", "restaurant"=>{"name"=>"Crabshakk", "description"=>"Seafood restaurant"}, "commit"=>"Add Restaurant"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (5.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRestaurant Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "restaurants" WHERE "restaurants"."name" = $1 LIMIT $2[0m  [["name", "Crabshakk"], ["LIMIT", 1]]
+  [1m[35mSQL (6.6ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "description", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Crabshakk"], ["description", "Seafood restaurant"], ["created_at", 2016-11-18 14:48:08 UTC], ["updated_at", 2016-11-18 14:48:08 UTC], ["user_id", 2]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/restaurants
+Completed 302 Found in 29ms (ActiveRecord: 14.5ms)
+
+
+Started GET "/restaurants" for ::1 at 2016-11-18 14:48:08 +0000
+Processing by RestaurantsController#index as HTML
+  Rendering restaurants/index.erb within layouts/application
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  Rendered restaurants/index.erb within layouts/application (4.1ms)
+  [1m[36mUser Load (4.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered application/_header.erb (11.9ms)
+Completed 200 OK in 99ms (Views: 89.8ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/restaurants/new" for ::1 at 2016-11-18 14:48:31 +0000
+Processing by RestaurantsController#new as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering restaurants/new.erb within layouts/application
+  Rendered restaurants/new.erb within layouts/application (3.9ms)
+  Rendered application/_header.erb (1.8ms)
+Completed 200 OK in 178ms (Views: 79.7ms | ActiveRecord: 29.7ms)
+
+
+Started POST "/restaurants" for ::1 at 2016-11-18 14:48:44 +0000
+Processing by RestaurantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bjRU/DWGDzW6bTvxjtkpHHZ6eywDkdAw2+Lzy5Z9Nb1U7SUJunoCVoeHDCvDmeFhchUrZqgIi4FlNgkFDWKPKw==", "restaurant"=>{"name"=>"Bella Italia", "description"=>"Italian restaurant"}, "commit"=>"Add Restaurant"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.8ms)
+
+
+  
+NoMethodError (undefined method `restaurants' for #<User:0x007ff2db05b470>):
+  
+app/controllers/restaurants_controller.rb:15:in `create'
+  Rendering /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.8ms)
+  Rendering /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendering /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (87.1ms)
+Started POST "/restaurants" for ::1 at 2016-11-18 14:49:24 +0000
+Processing by RestaurantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bjRU/DWGDzW6bTvxjtkpHHZ6eywDkdAw2+Lzy5Z9Nb1U7SUJunoCVoeHDCvDmeFhchUrZqgIi4FlNgkFDWKPKw==", "restaurant"=>{"name"=>"Bella Italia", "description"=>"Italian restaurant"}, "commit"=>"Add Restaurant"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRestaurant Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "restaurants" WHERE "restaurants"."name" = $1 LIMIT $2[0m  [["name", "Bella Italia"], ["LIMIT", 1]]
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "description", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Bella Italia"], ["description", "Italian restaurant"], ["created_at", 2016-11-18 14:49:25 UTC], ["updated_at", 2016-11-18 14:49:25 UTC], ["user_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/restaurants
+Completed 302 Found in 77ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/restaurants" for ::1 at 2016-11-18 14:49:25 +0000
+Processing by RestaurantsController#index as HTML
+  Rendering restaurants/index.erb within layouts/application
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[36mRestaurant Load (0.6ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  Rendered restaurants/index.erb within layouts/application (7.0ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered application/_header.erb (5.7ms)
+Completed 200 OK in 111ms (Views: 104.4ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/restaurants/10" for ::1 at 2016-11-18 14:49:31 +0000
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mRestaurant Load (0.8ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering restaurants/show.erb within layouts/application
+  [1m[36mReview Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT $2[0m  [["restaurant_id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRestaurant Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "restaurants" INNER JOIN "reviews" ON "restaurants"."id" = "reviews"."restaurant_id" WHERE "reviews"."user_id" = $1 AND "restaurants"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 10], ["LIMIT", 1]]
+  Rendered restaurants/show.erb within layouts/application (17.4ms)
+  Rendered application/_header.erb (1.6ms)
+Completed 200 OK in 153ms (Views: 72.0ms | ActiveRecord: 64.0ms)
+
+
+Started GET "/restaurants/10/reviews/new" for ::1 at 2016-11-18 14:49:33 +0000
+Processing by ReviewsController#new as HTML
+  Parameters: {"restaurant_id"=>"10"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.4ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering reviews/new.erb within layouts/application
+  Rendered reviews/new.erb within layouts/application (6.1ms)
+  Rendered application/_header.erb (27.9ms)
+Completed 200 OK in 135ms (Views: 101.6ms | ActiveRecord: 9.3ms)
+
+
+Started POST "/restaurants/10/reviews" for ::1 at 2016-11-18 14:49:42 +0000
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vt2K3Zn/t61Wwa7eHj1bsoO9pOZ58L1Y6Dq1lGEfat9Gg/rfkWGTLWNnRsdosO9S8rwfALOMTnEjXcn8v8nZvQ==", "review"=>{"comments"=>"Not bad. Snogged someone under the table here.", "rating"=>"3"}, "commit"=>"Review", "restaurant_id"=>"10"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRestaurant Load (0.8ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = $1 AND "reviews"."restaurant_id" = $2 LIMIT $3[0m  [["user_id", 2], ["restaurant_id", 10], ["LIMIT", 1]]
+  [1m[35mSQL (4.4ms)[0m  [1m[32mINSERT INTO "reviews" ("comments", "rating", "restaurant_id", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["comments", "Not bad. Snogged someone under the table here."], ["rating", 3], ["restaurant_id", 10], ["created_at", 2016-11-18 14:49:42 UTC], ["updated_at", 2016-11-18 14:49:42 UTC], ["user_id", 2]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/restaurants/10
+Completed 302 Found in 26ms (ActiveRecord: 8.5ms)
+
+
+Started GET "/restaurants/10" for ::1 at 2016-11-18 14:49:42 +0000
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering restaurants/show.erb within layouts/application
+  [1m[36mReview Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT $2[0m  [["restaurant_id", 10], ["LIMIT", 1]]
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 10]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRestaurant Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "restaurants" INNER JOIN "reviews" ON "restaurants"."id" = "reviews"."restaurant_id" WHERE "reviews"."user_id" = $1 AND "restaurants"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 10], ["LIMIT", 1]]
+  Rendered restaurants/show.erb within layouts/application (10.3ms)
+  Rendered application/_header.erb (2.0ms)
+Completed 200 OK in 58ms (Views: 50.8ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/" for ::1 at 2016-11-18 14:49:46 +0000
+Processing by RestaurantsController#index as HTML
+  Rendering restaurants/index.erb within layouts/application
+  [1m[35m (4.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[36mRestaurant Load (0.6ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  Rendered restaurants/index.erb within layouts/application (9.9ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered application/_header.erb (4.6ms)
+Completed 200 OK in 83ms (Views: 73.2ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/restaurants/new" for ::1 at 2016-11-18 14:52:25 +0000
+Processing by RestaurantsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering restaurants/new.erb within layouts/application
+  Rendered restaurants/new.erb within layouts/application (20.6ms)
+  Rendered application/_header.erb (8.8ms)
+Completed 200 OK in 323ms (Views: 215.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/restaurants" for ::1 at 2016-11-18 14:52:37 +0000
+Processing by RestaurantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"X8UNCS19w4XtjaA/Qd3+Oqx/Hs1940T2HImmrpy7RItlHHz8ooHO5tBnl+UMnTZHqBBOh9Z6H0eiXVxgB6T+HQ==", "restaurant"=>{"name"=>"Rioja", "description"=>"Spanish restaurant"}, "commit"=>"Add Restaurant"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."user_id" = $1[0m  [["user_id", 2]]
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 1.3ms)
+
+
+  
+NoMethodError (undefined method `build_with_user' for #<Restaurant::ActiveRecord_Associations_CollectionProxy:0x007ff2da870be8>
+Did you mean?  build_join_query):
+  
+app/controllers/restaurants_controller.rb:15:in `create'
+  Rendering /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.8ms)
+  Rendering /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.5ms)
+  Rendering /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.0ms)
+  Rendered /Users/Frances/.rvm/gems/ruby-2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (106.1ms)
+Started POST "/restaurants" for ::1 at 2016-11-18 14:55:27 +0000
+Processing by RestaurantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"X8UNCS19w4XtjaA/Qd3+Oqx/Hs1940T2HImmrpy7RItlHHz8ooHO5tBnl+UMnTZHqBBOh9Z6H0eiXVxgB6T+HQ==", "restaurant"=>{"name"=>"Rioja", "description"=>"Spanish restaurant"}, "commit"=>"Add Restaurant"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRestaurant Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "restaurants" WHERE "restaurants"."name" = $1 LIMIT $2[0m  [["name", "Rioja"], ["LIMIT", 1]]
+  [1m[35mSQL (1.9ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "description", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Rioja"], ["description", "Spanish restaurant"], ["created_at", 2016-11-18 14:55:28 UTC], ["updated_at", 2016-11-18 14:55:28 UTC], ["user_id", 2]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/restaurants
+Completed 302 Found in 75ms (ActiveRecord: 5.0ms)
+
+
+Started GET "/restaurants" for ::1 at 2016-11-18 14:55:28 +0000
+Processing by RestaurantsController#index as HTML
+  Rendering restaurants/index.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[36mRestaurant Load (0.6ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  Rendered restaurants/index.erb within layouts/application (8.2ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered application/_header.erb (11.1ms)
+Completed 200 OK in 146ms (Views: 137.8ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/restaurants/11" for ::1 at 2016-11-18 14:55:32 +0000
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRestaurant Load (0.9ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering restaurants/show.erb within layouts/application
+  [1m[36mReview Exists (2.0ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT $2[0m  [["restaurant_id", 11], ["LIMIT", 1]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRestaurant Exists (6.0ms)[0m  [1m[34mSELECT  1 AS one FROM "restaurants" INNER JOIN "reviews" ON "restaurants"."id" = "reviews"."restaurant_id" WHERE "reviews"."user_id" = $1 AND "restaurants"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 11], ["LIMIT", 1]]
+  Rendered restaurants/show.erb within layouts/application (31.0ms)
+  Rendered application/_header.erb (2.3ms)
+Completed 200 OK in 133ms (Views: 100.2ms | ActiveRecord: 15.7ms)
+
+
+Started GET "/" for ::1 at 2016-11-18 14:55:34 +0000
+Processing by RestaurantsController#index as HTML
+  Rendering restaurants/index.erb within layouts/application
+  [1m[35m (5.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[36mRestaurant Load (5.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  Rendered restaurants/index.erb within layouts/application (15.5ms)
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered application/_header.erb (5.4ms)
+Completed 200 OK in 94ms (Views: 76.0ms | ActiveRecord: 11.6ms)
+
+
+Started GET "/restaurants/1" for ::1 at 2016-11-18 14:57:59 +0000
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRestaurant Load (1.1ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering restaurants/show.erb within layouts/application
+  [1m[36mReview Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT $2[0m  [["restaurant_id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRestaurant Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "restaurants" INNER JOIN "reviews" ON "restaurants"."id" = "reviews"."restaurant_id" WHERE "reviews"."user_id" = $1 AND "restaurants"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 1], ["LIMIT", 1]]
+  Rendered restaurants/show.erb within layouts/application (125.4ms)
+  Rendered application/_header.erb (7.1ms)
+Completed 200 OK in 444ms (Views: 392.3ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/restaurants/11" for ::1 at 2016-11-18 14:59:28 +0000
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRestaurant Load (6.4ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering restaurants/show.erb within layouts/application
+  [1m[36mReview Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT $2[0m  [["restaurant_id", 11], ["LIMIT", 1]]
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRestaurant Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "restaurants" INNER JOIN "reviews" ON "restaurants"."id" = "reviews"."restaurant_id" WHERE "reviews"."user_id" = $1 AND "restaurants"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 11], ["LIMIT", 1]]
+  Rendered restaurants/show.erb within layouts/application (50.2ms)
+  Rendered application/_header.erb (4.0ms)
+Completed 200 OK in 346ms (Views: 259.8ms | ActiveRecord: 9.4ms)
+
+
+Started GET "/restaurants/11/reviews/new" for ::1 at 2016-11-18 14:59:30 +0000
+Processing by ReviewsController#new as HTML
+  Parameters: {"restaurant_id"=>"11"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.7ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering reviews/new.erb within layouts/application
+  Rendered reviews/new.erb within layouts/application (12.9ms)
+  Rendered application/_header.erb (2.1ms)
+Completed 200 OK in 183ms (Views: 116.1ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/" for ::1 at 2016-11-18 15:04:55 +0000
+Processing by RestaurantsController#index as HTML
+  Rendering restaurants/index.erb within layouts/application
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[36mRestaurant Load (1.5ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  Rendered restaurants/index.erb within layouts/application (86.5ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered application/_header.erb (16.6ms)
+Completed 200 OK in 438ms (Views: 355.0ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/restaurants/11" for ::1 at 2016-11-18 15:04:57 +0000
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRestaurant Load (11.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering restaurants/show.erb within layouts/application
+  [1m[36mReview Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT $2[0m  [["restaurant_id", 11], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRestaurant Exists (2.6ms)[0m  [1m[34mSELECT  1 AS one FROM "restaurants" INNER JOIN "reviews" ON "restaurants"."id" = "reviews"."restaurant_id" WHERE "reviews"."user_id" = $1 AND "restaurants"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 11], ["LIMIT", 1]]
+  Rendered restaurants/show.erb within layouts/application (37.5ms)
+  Rendered application/_header.erb (4.3ms)
+Completed 200 OK in 272ms (Views: 232.8ms | ActiveRecord: 15.3ms)
+
+
+Started GET "/restaurants/11/reviews/new" for ::1 at 2016-11-18 15:04:58 +0000
+Processing by ReviewsController#new as HTML
+  Parameters: {"restaurant_id"=>"11"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.4ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering reviews/new.erb within layouts/application
+  Rendered reviews/new.erb within layouts/application (57.4ms)
+  Rendered application/_header.erb (6.3ms)
+Completed 200 OK in 199ms (Views: 186.2ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/restaurants/11/reviews" for ::1 at 2016-11-18 15:05:07 +0000
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VPUIeS/99QlNwyoul2zDDKDSdnevRRlk5/Y/YrtsNWuOAAP4W+YmUWaJMIIf6fhRdArsGrCzVhNMUxtmJ/LN9A==", "review"=>{"comments"=>"I like it", "rating"=>"4"}, "commit"=>"Review", "restaurant_id"=>"11"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.7ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mReview Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = $1 AND "reviews"."restaurant_id" = $2 LIMIT $3[0m  [["user_id", 2], ["restaurant_id", 11], ["LIMIT", 1]]
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "reviews" ("comments", "rating", "restaurant_id", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["comments", "I like it"], ["rating", 4], ["restaurant_id", 11], ["created_at", 2016-11-18 15:05:07 UTC], ["updated_at", 2016-11-18 15:05:07 UTC], ["user_id", 2]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/restaurants/11
+Completed 302 Found in 65ms (ActiveRecord: 7.3ms)
+
+
+Started GET "/restaurants/11" for ::1 at 2016-11-18 15:05:07 +0000
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRestaurant Load (1.0ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering restaurants/show.erb within layouts/application
+  [1m[36mReview Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT $2[0m  [["restaurant_id", 11], ["LIMIT", 1]]
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 11]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRestaurant Exists (1.9ms)[0m  [1m[34mSELECT  1 AS one FROM "restaurants" INNER JOIN "reviews" ON "restaurants"."id" = "reviews"."restaurant_id" WHERE "reviews"."user_id" = $1 AND "restaurants"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 11], ["LIMIT", 1]]
+  Rendered restaurants/show.erb within layouts/application (14.4ms)
+  Rendered application/_header.erb (2.0ms)
+Completed 200 OK in 98ms (Views: 87.5ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/" for ::1 at 2016-11-18 15:05:13 +0000
+Processing by RestaurantsController#index as HTML
+  Rendering restaurants/index.erb within layouts/application
+  [1m[35m (17.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[36mRestaurant Load (0.8ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  Rendered restaurants/index.erb within layouts/application (25.4ms)
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered application/_header.erb (5.2ms)
+Completed 200 OK in 90ms (Views: 59.3ms | ActiveRecord: 20.3ms)
+
+
+Started GET "/restaurants/new" for ::1 at 2016-11-18 15:05:17 +0000
+Processing by RestaurantsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering restaurants/new.erb within layouts/application
+  Rendered restaurants/new.erb within layouts/application (5.9ms)
+  Rendered application/_header.erb (3.1ms)
+Completed 200 OK in 101ms (Views: 95.4ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/restaurants" for ::1 at 2016-11-18 15:05:30 +0000
+Processing by RestaurantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ga8lYMsorzJMJXKobU2/wvVnsp1hbSY8gI2lnhIod6O7dlSVRNSiUXHPRXIgDXe/8Qji18r0fY0+WV9QiTfNNQ==", "restaurant"=>{"name"=>"Nice Plaice", "description"=>"Fish and chips"}, "commit"=>"Add Restaurant"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRestaurant Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "restaurants" WHERE "restaurants"."name" = $1 LIMIT $2[0m  [["name", "Nice Plaice"], ["LIMIT", 1]]
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "description", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Nice Plaice"], ["description", "Fish and chips"], ["created_at", 2016-11-18 15:05:30 UTC], ["updated_at", 2016-11-18 15:05:30 UTC], ["user_id", 2]]
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/restaurants
+Completed 302 Found in 19ms (ActiveRecord: 10.6ms)
+
+
+Started GET "/restaurants" for ::1 at 2016-11-18 15:05:30 +0000
+Processing by RestaurantsController#index as HTML
+  Rendering restaurants/index.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  Rendered restaurants/index.erb within layouts/application (5.0ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered application/_header.erb (4.8ms)
+Completed 200 OK in 73ms (Views: 65.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/restaurants/12" for ::1 at 2016-11-18 15:05:33 +0000
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mRestaurant Load (0.8ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  Rendering restaurants/show.erb within layouts/application
+  [1m[36mReview Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT $2[0m  [["restaurant_id", 12], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRestaurant Exists (24.4ms)[0m  [1m[34mSELECT  1 AS one FROM "restaurants" INNER JOIN "reviews" ON "restaurants"."id" = "reviews"."restaurant_id" WHERE "reviews"."user_id" = $1 AND "restaurants"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 12], ["LIMIT", 1]]
+  Rendered restaurants/show.erb within layouts/application (35.2ms)
+  Rendered application/_header.erb (1.9ms)
+Completed 200 OK in 90ms (Views: 57.6ms | ActiveRecord: 26.5ms)
+
+
+Started GET "/restaurants/12/reviews/new" for ::1 at 2016-11-18 15:05:38 +0000
+Processing by ReviewsController#new as HTML
+  Parameters: {"restaurant_id"=>"12"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  Rendering reviews/new.erb within layouts/application
+  Rendered reviews/new.erb within layouts/application (3.8ms)
+  Rendered application/_header.erb (2.7ms)
+Completed 200 OK in 81ms (Views: 73.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2016-11-18 15:20:49 +0000
+Processing by RestaurantsController#index as HTML
+  Rendering restaurants/index.erb within layouts/application
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[36mRestaurant Load (0.5ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  Rendered restaurants/index.erb within layouts/application (42.9ms)
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered application/_header.erb (78.1ms)
+Completed 200 OK in 407ms (Views: 370.8ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/restaurants/new" for ::1 at 2016-11-18 15:20:52 +0000
+Processing by RestaurantsController#new as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering restaurants/new.erb within layouts/application
+  Rendered restaurants/new.erb within layouts/application (170.3ms)
+  Rendered application/_header.erb (1.9ms)
+Completed 200 OK in 269ms (Views: 256.3ms | ActiveRecord: 1.1ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2016-11-18 15:23:45 +0000
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"XfWuIZV508+m8qWqCzOZPENNhNhoC9A1DHyvMcRNXpDm6ns4MQn/Rq1+q8D4FX21vDKdyiFzVxKU0VORHqrgGg=="}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 64ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/" for ::1 at 2016-11-18 15:23:45 +0000
+Processing by RestaurantsController#index as HTML
+  Rendering restaurants/index.erb within layouts/application
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[36mRestaurant Load (0.5ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  Rendered restaurants/index.erb within layouts/application (17.6ms)
+  Rendered application/_header.erb (7.0ms)
+Completed 200 OK in 178ms (Views: 169.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2016-11-18 15:23:52 +0000
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (5.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (37.5ms)
+  Rendered application/_header.erb (2.0ms)
+Completed 200 OK in 134ms (Views: 130.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-11-18 15:24:06 +0000
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zd8bIOlVLCBf9u/td7lNpmNN/oXJ+rc2GeJh3acZPVQOpVLXRHim9ndRuqEcDNa3h6BlVbEzKQq0oKU/r2ue2w==", "user"=>{"email"=>"test@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (12.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "test@example.com"], ["encrypted_password", "$2a$11$0A.xOz3ZjnsEDE.wOUt5K.Bb6vevdEHn3TifsK0AD4wtd2pDBVcp2"], ["created_at", 2016-11-18 15:24:06 UTC], ["updated_at", 2016-11-18 15:24:06 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "current_sign_in_ip" = $4, "last_sign_in_ip" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["sign_in_count", 1], ["current_sign_in_at", 2016-11-18 15:24:06 UTC], ["last_sign_in_at", 2016-11-18 15:24:06 UTC], ["current_sign_in_ip", "::1/128"], ["last_sign_in_ip", "::1/128"], ["updated_at", 2016-11-18 15:24:06 UTC], ["id", 3]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 388ms (ActiveRecord: 17.6ms)
+
+
+Started GET "/" for ::1 at 2016-11-18 15:24:06 +0000
+Processing by RestaurantsController#index as HTML
+  Rendering restaurants/index.erb within layouts/application
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[36mRestaurant Load (0.6ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  Rendered restaurants/index.erb within layouts/application (6.8ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered application/_header.erb (7.1ms)
+Completed 200 OK in 97ms (Views: 91.4ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/restaurants/new" for ::1 at 2016-11-18 15:24:10 +0000
+Processing by RestaurantsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering restaurants/new.erb within layouts/application
+  Rendered restaurants/new.erb within layouts/application (5.6ms)
+  Rendered application/_header.erb (2.5ms)
+Completed 200 OK in 178ms (Views: 163.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/restaurants" for ::1 at 2016-11-18 15:24:19 +0000
+Processing by RestaurantsController#index as HTML
+  Rendering restaurants/index.erb within layouts/application
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[36mRestaurant Load (0.7ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  Rendered restaurants/index.erb within layouts/application (12.6ms)
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered application/_header.erb (17.8ms)
+Completed 200 OK in 122ms (Views: 113.9ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/restaurants/new" for ::1 at 2016-11-18 15:24:24 +0000
+Processing by RestaurantsController#new as HTML
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering restaurants/new.erb within layouts/application
+  Rendered restaurants/new.erb within layouts/application (10.7ms)
+  Rendered application/_header.erb (3.0ms)
+Completed 200 OK in 100ms (Views: 83.7ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/restaurants" for ::1 at 2016-11-18 15:24:44 +0000
+Processing by RestaurantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DoJHxHW4uqzSZHP/uGhFrQ5pS/fHrYMyvi39P+akcLfWLg559ep+PDCUB6O0bPhGPp/MmAOPrJ1zI1bFIdCpSw==", "restaurant"=>{"name"=>"Testie Bestie", "description"=>"A great place to eat"}, "commit"=>"Add Restaurant"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRestaurant Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "restaurants" WHERE "restaurants"."name" = $1 LIMIT $2[0m  [["name", "Testie Bestie"], ["LIMIT", 1]]
+  [1m[35mSQL (2.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "description", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Testie Bestie"], ["description", "A great place to eat"], ["created_at", 2016-11-18 15:24:44 UTC], ["updated_at", 2016-11-18 15:24:44 UTC], ["user_id", 3]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/restaurants
+Completed 302 Found in 28ms (ActiveRecord: 4.3ms)
+
+
+Started GET "/restaurants" for ::1 at 2016-11-18 15:24:44 +0000
+Processing by RestaurantsController#index as HTML
+  Rendering restaurants/index.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  Rendered restaurants/index.erb within layouts/application (6.3ms)
+  [1m[36mUser Load (8.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered application/_header.erb (15.0ms)
+Completed 200 OK in 93ms (Views: 80.3ms | ActiveRecord: 9.0ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2016-11-18 15:25:00 +0000
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"nOqJncLaEP7gXDXm6ftQiNdLlFKj3YkxfXeO+wn83pbLEF0pFlXNEtpuXRnFR9Ah0YPN3iVgkprHclR+rOKh/w=="}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 13ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2016-11-18 15:25:00 +0000
+Processing by RestaurantsController#index as HTML
+  Rendering restaurants/index.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  Rendered restaurants/index.erb within layouts/application (5.6ms)
+  Rendered application/_header.erb (4.4ms)
+Completed 200 OK in 90ms (Views: 86.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2016-11-18 15:25:05 +0000
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (6.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (25.1ms)
+  Rendered application/_header.erb (2.4ms)
+Completed 200 OK in 267ms (Views: 263.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-11-18 15:25:15 +0000
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GdgdHraDY+mIKHCgolb983232P/4L0z9UtZqvDpEc3kqOUGGcXIDVMhggwvRBj4/m5AMAtjoqmRHtEDgYjcb3Q==", "user"=>{"email"=>"test2@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test2@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "test2@example.com"], ["encrypted_password", "$2a$11$m07d2MFfdZVVnxpmYK4k5eyo8RpVVgesjghfQIjBne7Jir7eeRm.."], ["created_at", 2016-11-18 15:25:15 UTC], ["updated_at", 2016-11-18 15:25:15 UTC]]
+  [1m[35m (8.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "current_sign_in_ip" = $4, "last_sign_in_ip" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["sign_in_count", 1], ["current_sign_in_at", 2016-11-18 15:25:15 UTC], ["last_sign_in_at", 2016-11-18 15:25:15 UTC], ["current_sign_in_ip", "::1/128"], ["last_sign_in_ip", "::1/128"], ["updated_at", 2016-11-18 15:25:15 UTC], ["id", 4]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 238ms (ActiveRecord: 11.3ms)
+
+
+Started GET "/" for ::1 at 2016-11-18 15:25:15 +0000
+Processing by RestaurantsController#index as HTML
+  Rendering restaurants/index.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[36mRestaurant Load (0.4ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  Rendered restaurants/index.erb within layouts/application (4.3ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered application/_header.erb (5.6ms)
+Completed 200 OK in 69ms (Views: 64.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/restaurants" for ::1 at 2016-11-18 15:25:30 +0000
+Processing by RestaurantsController#index as HTML
+  Rendering restaurants/index.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[36mRestaurant Load (0.7ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  Rendered restaurants/index.erb within layouts/application (28.0ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered application/_header.erb (13.5ms)
+Completed 200 OK in 203ms (Views: 183.5ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/restaurants/1" for ::1 at 2016-11-18 15:45:50 +0000
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRestaurant Load (1.3ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering restaurants/show.erb within layouts/application
+  [1m[36mReview Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT $2[0m  [["restaurant_id", 1], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT $2[0m  [["restaurant_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  [1m[36mUser Load (6.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mRestaurant Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "restaurants" INNER JOIN "reviews" ON "restaurants"."id" = "reviews"."restaurant_id" WHERE "reviews"."user_id" = $1 AND "restaurants"."id" = $2 LIMIT $3[0m  [["user_id", 4], ["id", 1], ["LIMIT", 1]]
+  Rendered restaurants/show.erb within layouts/application (164.6ms)
+  Rendered application/_header.erb (2.7ms)
+Completed 200 OK in 465ms (Views: 296.4ms | ActiveRecord: 65.3ms)
+
+
+Started GET "/restaurants/1" for ::1 at 2016-11-18 15:46:00 +0000
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRestaurant Load (5.9ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering restaurants/show.erb within layouts/application
+  [1m[36mReview Exists (11.8ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT $2[0m  [["restaurant_id", 1], ["LIMIT", 1]]
+  [1m[36mReview Exists (3.1ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT $2[0m  [["restaurant_id", 1], ["LIMIT", 1]]
+  [1m[35m (31.3ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mRestaurant Exists (2.0ms)[0m  [1m[34mSELECT  1 AS one FROM "restaurants" INNER JOIN "reviews" ON "restaurants"."id" = "reviews"."restaurant_id" WHERE "reviews"."user_id" = $1 AND "restaurants"."id" = $2 LIMIT $3[0m  [["user_id", 4], ["id", 1], ["LIMIT", 1]]
+  Rendered restaurants/show.erb within layouts/application (67.0ms)
+  Rendered application/_header.erb (3.4ms)
+Completed 200 OK in 151ms (Views: 82.9ms | ActiveRecord: 55.4ms)
+
+
+Started GET "/restaurants/1/reviews/new" for ::1 at 2016-11-18 15:46:02 +0000
+Processing by ReviewsController#new as HTML
+  Parameters: {"restaurant_id"=>"1"}
+  [1m[36mUser Load (13.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (3.9ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.erb within layouts/application
+  Rendered reviews/new.erb within layouts/application (6.5ms)
+  Rendered application/_header.erb (1.4ms)
+Completed 200 OK in 104ms (Views: 66.3ms | ActiveRecord: 16.9ms)
+
+
+Started POST "/restaurants/1/reviews" for ::1 at 2016-11-18 15:46:14 +0000
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FhfCcQwKFqK9sfwg/qqEM+wHN+YXqI7z7iSCbTA7zE8y72sk5eFFsVENDHNnHg00hovgggrhEVzIKUopmYfi9w==", "review"=>{"comments"=>"Yeah thought it was okay but too expensive", "rating"=>"1"}, "commit"=>"Review", "restaurant_id"=>"1"}
+  [1m[36mUser Load (6.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.6ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."user_id" = $1 AND "reviews"."restaurant_id" = $2 LIMIT $3[0m  [["user_id", 4], ["restaurant_id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (14.0ms)[0m  [1m[32mINSERT INTO "reviews" ("comments", "rating", "restaurant_id", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["comments", "Yeah thought it was okay but too expensive"], ["rating", 1], ["restaurant_id", 1], ["created_at", 2016-11-18 15:46:14 UTC], ["updated_at", 2016-11-18 15:46:14 UTC], ["user_id", 4]]
+  [1m[35m (8.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/restaurants/1
+Completed 302 Found in 73ms (ActiveRecord: 30.4ms)
+
+
+Started GET "/restaurants/1" for ::1 at 2016-11-18 15:46:14 +0000
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRestaurant Load (0.9ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering restaurants/show.erb within layouts/application
+  [1m[36mReview Exists (3.1ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT $2[0m  [["restaurant_id", 1], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT $2[0m  [["restaurant_id", 1], ["LIMIT", 1]]
+  [1m[35m (21.2ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  [1m[36mReview Load (0.9ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mRestaurant Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "restaurants" INNER JOIN "reviews" ON "restaurants"."id" = "reviews"."restaurant_id" WHERE "reviews"."user_id" = $1 AND "restaurants"."id" = $2 LIMIT $3[0m  [["user_id", 4], ["id", 1], ["LIMIT", 1]]
+  Rendered restaurants/show.erb within layouts/application (46.9ms)
+  Rendered application/_header.erb (22.3ms)
+Completed 200 OK in 177ms (Views: 139.4ms | ActiveRecord: 29.3ms)
+
+

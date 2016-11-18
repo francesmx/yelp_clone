@@ -2,6 +2,7 @@
 <p><%= @restaurant.description %></p>
 <% if @reviews.any? %>
 <h3>Reviews</h3>
+<h4>Average rating: <%= @restaurant.average_rating.to_i %></h4>
   <% @reviews.each do |r| %>
   <div class="review">
     <h4><%= r.rating %> out of 5 - "<%= r.comments %>"</h4>

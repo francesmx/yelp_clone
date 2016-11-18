@@ -15,7 +15,7 @@ feature 'User can sign in and out' do
 
   context 'User is signed in' do
     before do
-      sign_up_and_sign_in
+      sign_up_and_sign_in('test@example.com', 'testtest')
     end
 
     it 'should see "sign out" link' do
